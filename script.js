@@ -1,0 +1,181 @@
+// change navigation onscroll
+window.onscroll = () => {
+  const nav = document.querySelector("#navbar");
+  if (this.scrollY <= 150) nav.className = "";
+  else nav.className = "scroll";
+};
+
+$(window).scroll(function() {
+  $("a, .logo").toggleClass("scroll", $(this).scrollTop() > 150);
+});
+
+// Facebook messenger icon
+window.fbAsyncInit = function() {
+  FB.init({
+    appId: "95100348886",
+    xfbml: true,
+    version: "v2.6"
+  });
+};
+
+(function(d, s, id) {
+  var js,
+    fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {
+    return;
+  }
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+})(document, "script", "facebook-jssdk");
+
+//Parama toggle image
+$(".parama__center--img").click(function() {
+  $(this).toggleClass("full");
+});
+
+//Map functionality beginning
+var map = L.map("map").setView([55.709436, 21.147583], 9);
+var osmUrl = "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+var osmLayer = new L.TileLayer(osmUrl, {
+  maxZoom: 19,
+  attribution: "Map data © OpenStreetMap contributors"
+});
+map.addLayer(osmLayer);
+
+//this section sets the behavior of the markers themselves
+var marker1 = L.marker([55.727438, 21.512214], {
+  title: "marker_1"
+})
+  .addTo(map)
+  .bindPopup("Vežaičiai (PG28)")
+  .on("click", clickZoom);
+var marker2 = L.marker([55.642468, 21.410483], {
+  title: "marker_2"
+})
+  .addTo(map)
+  .bindPopup("Gelžininiai (PG29)")
+  .on("click", clickZoom);
+var marker3 = L.marker([55.468622, 21.3975], {
+  title: "marker_3"
+})
+  .addTo(map)
+  .bindPopup("Saugai")
+  .on("click", clickZoom);
+var marker4 = L.marker([55.515283, 21.233762], {
+  title: "marker_4"
+})
+  .addTo(map)
+  .bindPopup("Dreverna")
+  .on("click", clickZoom);
+var marker6 = L.marker([55.919811, 21.575227], {
+  title: "marker_6"
+})
+  .addTo(map)
+  .bindPopup("Kartenos aerodromas")
+  .on("click", clickZoom);
+var marker7 = L.marker([55.668047, 21.312241], {
+  title: "marker_7"
+})
+  .addTo(map)
+  .bindPopup("Dovilai")
+  .on("click", clickZoom);
+
+function clickZoom(e) {
+  map.setView(e.target.getLatLng(), 11);
+}
+
+//everything below here controls interaction from outside the map
+var markers = [];
+markers.push(marker1);
+markers.push(marker2);
+markers.push(marker3);
+markers.push(marker4);
+markers.push(marker6);
+markers.push(marker7);
+
+function markerFunction(id) {
+  for (var i in markers) {
+    var markerID = markers[i].options.title;
+    var position = markers[i].getLatLng();
+    if (markerID == id) {
+      map.setView(position, 11);
+      markers[i].openPopup();
+    }
+  }
+}
+
+$("a").click(function() {
+  markerFunction($(this)[0].id);
+});
+
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  document.execCommand("copy");
+}
+function myFunction1() {
+  var copyText = document.getElementById("myInput1");
+  copyText.select();
+  document.execCommand("copy");
+}
+function myFunction2() {
+  var copyText = document.getElementById("myInput2");
+  copyText.select();
+  document.execCommand("copy");
+}
+function myFunction3() {
+  var copyText = document.getElementById("myInput3");
+  copyText.select();
+  document.execCommand("copy");
+}
+function myFunction4() {
+  var copyText = document.getElementById("myInput4");
+  copyText.select();
+  document.execCommand("copy");
+}
+function myFunction5() {
+  var copyText = document.getElementById("myInput5");
+  copyText.select();
+  document.execCommand("copy");
+}
+function myFunction6() {
+  var copyText = document.getElementById("myInput6");
+  copyText.select();
+  document.execCommand("copy");
+}
+
+document.getElementById("reset").addEventListener("click", reset);
+
+function reset() {
+  map.setView([55.709436, 21.147583], 9);
+}
+
+//Map functionality Ending
+
+//Services images toggle full screen
+$('a[data-fancybox="gallery"]').fancybox({
+  loop: true,
+  infobar: true,
+  buttons: ["close"],
+  animationEffect: "fade"
+});
+$('a[data-fancybox="gallery2"]').fancybox({
+  loop: true,
+  infobar: true,
+  buttons: ["close"],
+  animationEffect: "fade"
+});
+$('a[data-fancybox="gallery3"]').fancybox({
+  loop: true,
+  infobar: true,
+  buttons: ["close"],
+  animationEffect: "fade"
+});
+$('a[data-fancybox="gallery4"]').fancybox({
+  loop: true,
+  infobar: true,
+  buttons: ["close"],
+  animationEffect: "fade"
+});
