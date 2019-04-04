@@ -1,12 +1,8 @@
 // change navigation onscroll
-window.onscroll = () => {
-  const nav = document.querySelector("#navbar");
-  if (this.scrollY <= 150) nav.className = "";
-  else nav.className = "scroll";
-};
-
-$(window).scroll(function() {
-  $("a, .logo").toggleClass("scroll", $(this).scrollTop() > 150);
+jQuery(document).ready(function($) {
+  $(window).scroll(function() {
+    $("a, .logo, #navbar").toggleClass("scroll", $(this).scrollTop() > 150);
+  });
 });
 
 // Facebook messenger icon
