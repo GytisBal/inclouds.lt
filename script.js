@@ -153,29 +153,3 @@ function reset() {
 }
 
 //Map functionality Ending
-
-//Services images toggle full screen
-$('a[data-fancybox="gallery"]').fancybox({
-  loop: true,
-  infobar: true,
-  buttons: ["close"],
-  animationEffect: "fade"
-});
-$('a[data-fancybox="gallery2"]').fancybox({
-  loop: true,
-  infobar: true,
-  buttons: ["close"],
-  animationEffect: "fade"
-});
-$('a[data-fancybox="gallery3"]').fancybox({
-  loop: true,
-  infobar: true,
-  buttons: ["close"],
-  animationEffect: "fade"
-});
-$('a[data-fancybox="gallery4"]').fancybox({
-  loop: true,
-  infobar: true,
-  buttons: ["close"],
-  animationEffect: "fade"
-});

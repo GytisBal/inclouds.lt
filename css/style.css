@@ -717,7 +717,7 @@ a {
     font-size: 1.6rem; }
 
 #contact #form {
-  width: 410px;
+  width: 100%;
   float: left; }
 
 #contact #form h2 {
@@ -1026,6 +1026,7 @@ a {
       height: auto; } }
 
 .registration {
+  display: inline-block;
   display: -webkit-inline-box;
   width: 100%;
   height: 3.2rem; }
@@ -1033,8 +1034,8 @@ a {
     display: inline; }
 
 .fb-messengermessageus {
-  display: inline;
   filter: brightness(75%);
-  padding-left: 1rem; }
+  padding-left: 1rem;
+  width: 15rem !important; }
   .fb-messengermessageus:hover {
     text-decoration: none !important; }
