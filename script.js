@@ -27,13 +27,15 @@ window.fbAsyncInit = function() {
 })(document, "script", "facebook-jssdk");
 
 //Parama toggle image
-$(".parama__center--img").click(function() {
-  $(this).toggleClass("full");
+jQuery(document).ready(function($) {
+  $(".parama__center--img").click(function() {
+    $(this).toggleClass("full");
+  });
 });
 
 //Map functionality beginning
 var map = L.map("map").setView([55.709436, 21.147583], 9);
-var osmUrl = "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+var osmUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 var osmLayer = new L.TileLayer(osmUrl, {
   maxZoom: 19,
   attribution: "Map data © OpenStreetMap contributors"
