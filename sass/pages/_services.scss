@@ -1,0 +1,121 @@
+.composition {
+  position: relative;
+  height: 13rem;
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(black, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    filter: brightness(80%);
+    transition: 0.2s;
+    backface-visibility: hidden;
+
+    @include respond(tab-port) {
+      float: left;
+      position: relative;
+      width: 33.33333333%;
+      height: 30rem;
+      box-shadow: 0 1.5rem 3rem rgba(black, 0.2);
+    }
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+
+      @include respond(tab-port) {
+        top: 0;
+        left: 15rem;
+        position: absolute;
+        width: 40%;
+        height: auto;
+        z-index: 11;
+      }
+    }
+    &--p2 {
+      right: 0;
+      top: 2rem;
+
+      @include respond(tab-port) {
+        top: 1rem;
+        position: absolute;
+        width: 40%;
+        height: auto;
+      }
+    }
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+
+      @include respond(tab-port) {
+        top: 1rem;
+        left: 0;
+        position: absolute;
+        width: 40%;
+        height: auto;
+      }
+    }
+    &:hover {
+      width: 60%;
+      transform: translateX(-1rem);
+      box-shadow: 0 2.5rem 4rem rgba(black, 0.5);
+      z-index: 20;
+      @include respond(tab-port) {
+        width: 40%;
+        transform: translateX(0);
+      }
+    }
+  }
+  &:hover &__photo:not(:hover) {
+    width: 50%;
+
+    @include respond(tab-port) {
+      width: 38%;
+    }
+  }
+}
+
+.reverse {
+  @include respond(tab-port) {
+    position: relative;
+    height: 50rem;
+  }
+  &__wrapper {
+    @include respond(tab-port) {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__col {
+    position: relative;
+    height: 25rem;
+    margin-right: 6rem;
+
+    @include respond(tab-port) {
+      height: auto;
+    }
+  }
+}
+
+.registration {
+  display: inline-block;
+  display: -webkit-inline-box;
+  width: 100%;
+  height: 3.2rem;
+
+  &__text {
+    display: inline;
+  }
+}
+.fb-messengermessageus {
+  filter: brightness(75%);
+  padding-left: 1rem;
+  width: 15rem !important;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+}

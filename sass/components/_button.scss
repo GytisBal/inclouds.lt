@@ -1,0 +1,23 @@
+.btn-text {
+  &:link,
+  &:visited {
+    color: inherit;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    padding: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  &:hover {
+    background-image: linear-gradient(to right, #99c2ff, #1a75ff) !important;
+    color: black !important;
+    background-clip: border-box !important;
+    box-shadow: 0 1rem 2rem rgba(black, 0.15);
+    transform: translateY(-2px);
+  }
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba(black, 0.15);
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,236 @@
+.navigationBackground {
+  position: absolute;
+  height: 8rem;
+  top: 0;
+  text-align: center;
+  background: linear-gradient($color-grey-dark-3 10%, $color-grey-dark-2);
+  z-index: 500;
+}
+
+#navbar,
+.navigation {
+  max-width: 120rem;
+  margin: 0 auto;
+  font-family: sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: fixed;
+  height: 8rem;
+  top: 0;
+  left: 3rem;
+  right: 3rem;
+  text-align: center;
+  background: linear-gradient($color-grey-dark-3 10%, $color-grey-dark-2);
+  z-index: 1000;
+
+  @include respond(tab-land) {
+    max-width: 100%;
+    left: 0rem;
+    right: 0rem;
+  }
+
+  &.scroll {
+    max-width: 100%;
+    background: linear-gradient(#000 40%, rgba(#000, 0));
+    color: #eef;
+    height: 6rem;
+    transition: 0.3s ease;
+    left: 0rem;
+    right: 0rem;
+
+    @include respond(tab-land) {
+      background: linear-gradient($color-grey-dark-3 10%, $color-grey-dark-2);
+      color: #eef;
+      height: 8rem;
+    }
+  }
+  .logo-box {
+    position: absolute;
+    top: 1rem;
+    left: 4rem;
+
+    @include respond(tab-land) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include respond(phone) {
+      left: 43%;
+    }
+    .logo {
+      height: 6rem;
+      width: 12rem;
+      transition: all 0.3s ease;
+      filter: brightness(200%);
+
+      &.scroll {
+        transform: translateY(-7.5rem);
+        opacity: 0;
+
+        @include respond(tab-land) {
+          transform: none;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
+  &__item {
+    margin: 0 auto;
+    height: 100%;
+    float: left;
+  }
+  &__link {
+    position: relative;
+    height: 100%;
+    display: block;
+    padding: 2.6rem 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    transition: 0.4s ease;
+    font-size: 110%;
+    &:after {
+      display: block;
+      position: absolute;
+      top: 0.5rem;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: 100%;
+      height: 1px;
+      content: ".";
+      color: transparent;
+      background-image: linear-gradient(to right, #99c2ff, #1a75ff);
+      visibility: none;
+      opacity: 0;
+      z-index: -1;
+      border-radius: 15px;
+      transition: 0.4s ease;
+    }
+    &:hover:after,
+    &:focus:after,
+    &:visited:after {
+      opacity: 1;
+      visibility: visible;
+      height: 66%;
+    }
+    &.scroll {
+      color: white;
+      font-size: 110%;
+      padding: 0.5rem 1.6rem;
+      padding-top: 1rem;
+    }
+  }
+  a:hover,
+  a:focus {
+    color: black;
+    text-decoration: none;
+  }
+  a:hover.scroll,
+  a:focus.scroll {
+    color: black;
+    text-decoration: none;
+  }
+  &__icons {
+    position: absolute;
+    right: 4rem;
+    top: 0;
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    @include respond(phone) {
+      right: 0;
+    }
+
+    &__item {
+      height: 100%;
+      float: left;
+    }
+
+    &__link {
+      height: 100%;
+      display: block;
+      padding: 2rem 0.6rem;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: white;
+      transition: 0.4s ease;
+      font-size: 130%;
+
+      &.scroll {
+        transform: translateY(-7.5rem);
+        opacity: 0;
+
+        @include respond(tab-land) {
+          transform: none;
+          opacity: 1;
+        }
+      }
+    }
+    .fa {
+      border: 1px solid;
+      border-radius: 50%;
+      color: #fff;
+      width: 4rem;
+      height: 4rem;
+      text-align: center;
+      padding-top: 1rem;
+      -webkit-transition: all 0.5s ease 0s;
+      -moz-transition: all 0.5s ease 0s;
+      -o-transition: all 0.5s ease 0s;
+      transition: all 0.5s ease 0s;
+      &:hover {
+        border-color: rgba(10, 10, 10, 0.1);
+      }
+    }
+
+    .fa-facebook:hover {
+      background-image: linear-gradient(to right, #99c2ff, #1a75ff);
+    }
+    .fa-youtube:hover {
+      background-image: linear-gradient(to right, #e52d27, #b31217);
+    }
+    .fa-instagram:hover {
+      background: radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fdf497 5%,
+        #fd5949 45%,
+        #d6249f 60%,
+        #285aeb 90%
+      );
+    }
+  }
+}
+
+.current:after {
+  opacity: 1;
+  visibility: visible;
+  height: 66%;
+}
+.current.scroll {
+  color: black !important;
+}
+.current,
+a {
+  color: black;
+}

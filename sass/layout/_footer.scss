@@ -1,0 +1,22 @@
+.footer {
+  position: relative;
+  height: 6rem;
+  margin-right: -3rem;
+  margin-left: -3rem;
+  background: linear-gradient($color-grey-dark-2 10%, $color-grey-dark-3);
+
+  @include respond(tab-land) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.copyright {
+  position: absolute;
+  width: 100%;
+  font-size: 1.4rem;
+  color: $color-grey-light-2;
+  margin: 0 auto;
+  margin-top: 2rem;
+  text-align: center;
+}

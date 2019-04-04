@@ -1,0 +1,110 @@
+.section-menu {
+  overflow: hidden;
+}
+.menu {
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 3px;
+  cursor: default;
+  transition: transform 0.3s;
+
+  &__shape {
+    width: 20rem;
+    height: 20rem;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    position: relative;
+    backface-visibility: hidden;
+  }
+  &__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all 0.5s;
+  }
+
+  &__shadow {
+    height: 20rem;
+    width: 20rem;
+    margin: 0 auto;
+    border-radius: 100px;
+    -webkit-box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 1);
+    box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 1);
+  }
+
+  &__text {
+    @include respond(tab-port) {
+      width: 55%;
+      margin: 0 auto;
+    }
+  }
+  &:hover &__heading,
+  &:hover &__button {
+    background-image: linear-gradient(to right, #1949b7, $color-primary-dark);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+  }
+}
+
+//SECTION VIDEO
+.video {
+  &__container {
+    position: relative;
+    height: 70rem;
+    margin-bottom: 10rem;
+    margin-top: 10rem;
+  }
+  &__background {
+    background: url("../img/background/01.jpg") no-repeat center;
+    background-size: cover;
+    height: 100%;
+    background-attachment: fixed;
+    filter: brightness(60%);
+    position: absolute;
+    top: 0;
+    left: -3rem;
+    right: -3rem;
+
+    @include respond(tab-land) {
+      left: 0rem;
+      right: 0rem;
+    }
+  }
+  &__youtube {
+    filter: brightness(130%);
+    display: block;
+    max-width: 90rem;
+    height: 70%;
+    width: 70%;
+    margin: 0rem auto 7rem auto;
+    -webkit-box-shadow: 0px 14px 24px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 14px 24px -5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 14px 24px -5px rgba(0, 0, 0, 0.75);
+
+    @include respond(tab-land) {
+      width: 80%;
+    }
+
+    @include respond(tab-port) {
+      width: 80%;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+}
+
+//SECTION VIDEO END
+
+//SECTION GALLERY
+#jssor_1 {
+  box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 1);
+  margin-bottom: 3rem;
+}
+//SECTION GALLERY END
