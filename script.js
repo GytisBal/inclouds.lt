@@ -1,3 +1,8 @@
+const navigationList = document.querySelector(".navigation-phone__list");
+navigationList.onload = setTimeout(function changeStyle() {
+  navigationList.style.display = "initial";
+}, 1000);
+
 // change navigation onscroll
 jQuery(document).ready(function($) {
   $(window).scroll(function() {
