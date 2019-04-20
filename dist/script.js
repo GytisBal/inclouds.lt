@@ -1,3 +1,4 @@
+// dont show phone navigation list until loaded
 const navigationList = document.querySelector(".navigation-phone__list");
 navigationList.onload = setTimeout(function changeStyle() {
   navigationList.style.display = "initial";
@@ -49,37 +50,37 @@ map.addLayer(osmLayer);
 
 //this section sets the behavior of the markers themselves
 var marker1 = L.marker([55.727438, 21.512214], {
-  title: "marker_1"
+  title: "Vežaičiai (PG28)"
 })
   .addTo(map)
   .bindPopup("Vežaičiai (PG28)")
   .on("click", clickZoom);
 var marker2 = L.marker([55.642468, 21.410483], {
-  title: "marker_2"
+  title: "Gelžininiai (PG29)"
 })
   .addTo(map)
   .bindPopup("Gelžininiai (PG29)")
   .on("click", clickZoom);
 var marker3 = L.marker([55.468622, 21.3975], {
-  title: "marker_3"
+  title: "Saugai (PG30)"
 })
   .addTo(map)
-  .bindPopup("Saugai")
+  .bindPopup("Saugai (PG30)")
   .on("click", clickZoom);
 var marker4 = L.marker([55.515283, 21.233762], {
-  title: "marker_4"
+  title: "Dreverna"
 })
   .addTo(map)
   .bindPopup("Dreverna")
   .on("click", clickZoom);
 var marker6 = L.marker([55.919811, 21.575227], {
-  title: "marker_6"
+  title: "Kartenos aerodromas"
 })
   .addTo(map)
   .bindPopup("Kartenos aerodromas")
   .on("click", clickZoom);
 var marker7 = L.marker([55.668047, 21.312241], {
-  title: "marker_7"
+  title: "Dovilai"
 })
   .addTo(map)
   .bindPopup("Dovilai")
